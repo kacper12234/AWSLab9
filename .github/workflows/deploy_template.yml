@@ -24,10 +24,11 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v3
       with:
-        context: ./
+        context: .
+        file: Dockerfile
         push: true
         tags: |
-          spg51/lab:ebs_frontend
+          kacper12234/lab:ebs_frontend
 
     - name: Generate deployment package
       run: zip -r deploy.zip . -x '*.git*'
